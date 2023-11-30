@@ -6,6 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * install node
 * install angular cli: `npm install -g @angular/cli`
 * create project: ng new <project_name>
+* Get bootstrap: `npm install bootstrap`
 
 ## Development server
 

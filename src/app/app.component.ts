@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { AddBirthdayComponent } from './components/add-birthday/add-birthday.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, AddBirthdayComponent, NavBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
