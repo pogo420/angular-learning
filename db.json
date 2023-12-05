@@ -1,0 +1,38 @@
+{
+  "addBirthdays": [
+    {
+      "birthdays": [
+        {
+          "name": "1",
+          "dateOfBirth": "2023-12-20"
+        },
+        {
+          "name": "3",
+          "dateOfBirth": "2023-12-20"
+        },
+        {
+          "name": "10",
+          "dateOfBirth": "2023-12-20"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "birthdays": [
+        {
+          "name": "1",
+          "dateOfBirth": "2023-12-20"
+        },
+        {
+          "name": "3",
+          "dateOfBirth": "2023-12-20"
+        },
+        {
+          "name": "10",
+          "dateOfBirth": "2023-12-20"
+        }
+      ],
+      "id": 2
+    }
+  ]
+}

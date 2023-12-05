@@ -7,10 +7,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * install angular cli: `npm install -g @angular/cli`
 * create project: ng new <project_name>
 * Get bootstrap: `npm install bootstrap`
+* Get json server: `npm install -g json-server`
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+
+## Data server
+Check the dummy data server `http://localhost:3000/`
+
 
 ## Code scaffolding
 
