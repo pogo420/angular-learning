@@ -1,10 +1,15 @@
-<ol class="list-group list-group-numbered">
-    <div *ngFor="let birthday of birthdays">
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">Name: {{birthday.name}}</div>
-            Birth date: {{birthday.dateOfBirth}}
+<div *ngIf="this.birthdays.length===0; else elseBlock">No birthdays to display</div>
+<ng-template #elseBlock>
+    <ol class="list-group list-group-numbered">
+        <div *ngFor="let birthday of birthdays">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Name: {{birthday.name}}</div>
+                Birth date: {{birthday.dateOfBirth}}
+            </div>
+            </li>
         </div>
-        </li>
-    </div>
-  </ol>
+      </ol>
+      <br>
+      <button type="submit" class="btn btn-primary">Add to db</button>
+</ng-template>
