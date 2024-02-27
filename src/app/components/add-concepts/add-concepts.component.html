@@ -1,0 +1,136 @@
+<div *ngIf = 'showPrev'>
+
+    <label>username:</label>
+    <br>
+    <input type="text" (keyup.enter)="onKeyup(username.value)" #username>
+    <br>
+    <label>age:</label>
+    <br>
+    <input type="number" [(ngModel)]="age" (keyup.enter)="onKeyupAge()" >
+    <br>
+    <br>
+    <div *ngIf = 'items.length > 0; else noData'>
+        <ul>
+            <li *ngFor = "let pos of items; let i = index">
+                {{i}} -- {{pos}}
+            </li>
+        </ul>
+    </div>
+    
+    <ng-template #noData>
+        <p> Nothing to display</p>
+    </ng-template>
+    
+    <button (click)="onClick(1)"> Gablu </button>
+    <button (click)="onClick(2)"> Gublu </button>
+    <button (click)="onClick(3)"> Puglu </button>
+    
+    <br>
+    
+    <div [ngSwitch] = "buttonCheck">
+        <div *ngSwitchCase = "1"> You pressed gablu</div>
+        <div *ngSwitchCase = "2"> You pressed gublu</div>
+        <div *ngSwitchCase = "3"> You pressed puglu</div>
+        <div *ngSwitchDefault>Please press something</div>
+    </div>
+    
+    <br>
+    
+    <p [ngClass]="{'strike': isStike}">Click the button to strike this text</p>
+    <button (click)="iniStrike()"> click </button>
+    <br>
+    <br>
+    <p>{{name | uppercase}}</p>
+    <p>{{name | lowercase}}</p>
+    <p>{{data | number }}</p>
+    <p>{{data | currency: 'INR' }}</p>
+    <p>{{dob | date}}</p>
+    
+    <!-- basic slice piple -->
+    <p>{{items | slice : 0 : 2}}</p>
+    
+    <!-- Last element from slice pipe-->
+    <p>{{items | slice : items.length-1:items.length}}</p>
+    
+    
+    <!-- Builtin pipe -->
+    <p>#################</p>
+    <p> {{name}}</p>
+    <p> {{name | testPipe}}</p>
+    
+
+
+    
+    <br>
+    <br>
+    <br>
+    <form #f = "ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input 
+            type="email" c
+            lass="form-control" 
+            id="exampleFormControlInput1" 
+            placeholder="name@example.com" 
+            name="email_id" ngModel
+            #email_id = "ngModel"
+            (change)="onChangeEmail(email_id)"
+            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+            required
+        >
+            <div *ngIf="email_id.errors?.['required']">
+                <div  class="alert alert-danger" *ngIf="email_id.touched && email_id.invalid"> Email can not be empty</div>
+            </div>
+            <div *ngIf="email_id.errors?.['pattern']">
+                <div  class="alert alert-danger" *ngIf="email_id.touched"> Wrong pattern</div>
+            </div>
+            
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+            <textarea 
+            class="form-control" 
+            id="exampleFormControlTextarea1" 
+            rows="3"  
+            name="text_data" 
+            ngModel
+            #text_data = ngModel
+            minlength="5"
+            maxlength="10"
+            required></textarea>
+            <div *ngIf="text_data.errors?.['required']">
+                <div  class="alert alert-danger" *ngIf="text_data.touched && text_data.invalid"> Text field can not be empty</div>
+            </div>
+            <div *ngIf="text_data.errors?.['minlength']">
+                <div  class="alert alert-danger" *ngIf="text_data.touched"> Min 5 characters required</div>
+            </div>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3" [disabled]="f.invalid">Confirm identity</button>
+        </div>
+    </form> 
+</div>
+
+<div class="container-fluid">
+
+    <input [(ngModel)]="tableSearch" placeholder="search within table">
+    <table border="1" width="100%">
+        <tr>
+            <th> Name</th>
+            <th> DoB</th>
+        </tr>
+        <tr *ngFor = "let person of persons | filterTable: tableSearch |  paging: windows[current_range]: tableSearch">
+            <td>{{person.name}}</td>
+            <td>{{person.dateOfBirth | date}}</td>
+        </tr>
+    </table>
+    <select [(ngModel)]="page_size" (change)="recalculateWindow()">
+        <option>5</option>
+        <option>10</option>
+        <option>15</option>
+        <option>20</option>
+    </select>
+    <button type="submit" class="btn btn-link" (click)="paginatorElementHandler(-1)">Previous</button>
+    <button type="submit" class="btn btn-link" (click)="paginatorElementHandler(1)">Next</button>
+</div>
