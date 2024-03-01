@@ -197,7 +197,7 @@ Builtin pipes:
 
 ### query parameters:
 * Advantage of using query params is: it's a optional and it won't give route issues, do http without query.
-* 
+* For details check home component and angular-query-params component.
 
 ## Important Operators:
 * All observables must have suffix `$`.
