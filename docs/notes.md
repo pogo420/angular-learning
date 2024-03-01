@@ -181,9 +181,36 @@ Builtin pipes:
     ```
     <div  class="alert alert-danger" *ngIf="email_id.touched && email_id.invalid"> Email can not be empty</div>
     ```
-* More validation can be done check this [file](../src/app/components/add-concepts/add-concepts.component.html)
+* More validation can be done check this [file](../src/app/components/add-concepts/add-concepts.component.html).
+
+
+## Angular router:
+### routerLink vs href:
+* Pages is reloaded when we use `href`.
+* Using `routerLink` only necessary data is downloaded. Html, js and css is not downloaded again.
+
+### router paramaters:
+* Defining router with parameters.
+   * calling the [url](../src/app/components/home/home.component.html).
+   * Few imports required in [ts](../src/app/components/home/home.component.ts).
+* Reading [parameters](../src/app/components/angular-params/angular-params.component.ts).
+
+### query parameters:
+* Advantage of using query params is: it's a optional and it won't give route issues, do http without query.
+* 
 
 ## Important Operators:
+* All observables must have suffix `$`.
+```
+new Observables(
+    observer => {
+        setTimeout(()={
+            observer.next(data);
+            observer.complete();
+        });
+    }
+);
+```
 * Safe Navigation Operator: `?`
    * Used to prevent Angular from throwing errors, when trying to access object properties of an object that don’t exist.
    * Useful in http calls, It is rendered when data is available:

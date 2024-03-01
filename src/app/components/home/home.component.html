@@ -14,4 +14,12 @@
       </div>
     </div>
     <div class="accordion-item">
+    <input placeholder="enter test name" [(ngModel)]=testName>
+    <input placeholder="enter status" [(ngModel)]=status>
+    <button [routerLink]="['/angularParams', testName, 'status', status]"> Click </button>
+    <br>
+    <button routerLink="/angularQueryParams" [queryParams]="{name: 'sam', id: 23}"> Click For Q params </button>
+
+    <button (click)="handleRoute()"> Click For Q params - Programatically </button>
+
   </div>
