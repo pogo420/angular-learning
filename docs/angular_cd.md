@@ -28,5 +28,16 @@
    * When Data flows from subscription.
    * Direct call to `ChangeDetectorRef.markForCheck()`
 
+## Pictorial Nodes of CD:
+
+|![](./images/cd_1.jpg)|
+|-|
+
+|![](./images/cd_2.jpg)|
+|-|
+
+|![](./images/cd_3.jpg)|
+|-|
+
 ## Singnals:
 * Next step to CD - Yet to learn.
