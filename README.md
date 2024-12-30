@@ -1,11 +1,12 @@
 # AngularLearning
 
 ## Angular learning:
-* Angular [notes](./docs/notes.md)
-* Component lifecycle [notes](./docs/component_lifecycle.md)
-* Angular [change detection](./docs/angular_cd.md)
-* Browser [fundamentals](/docs/browser_fundamentals.md)
-* Js engine [brief](/docs/js_engine_overview.md)
+* Angular [notes](./docs/notes.md).
+* Component lifecycle [notes](./docs/component_lifecycle.md).
+* Angular [change detection](./docs/angular_cd.md).
+* Angular performace [pointers](./docs/performance_debug.md).
+* Browser [fundamentals](/docs/browser_fundamentals.md).
+* Js engine [brief](/docs/js_engine_overview.md).
 
 ## Setup 
 * install node
